@@ -1,0 +1,82 @@
+# robots.txt for A F Art - Online Sketch Store - https://avinash29asf.github.io/AFArt/
+# Optimized for Google, Bing, and AI Search Engines
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Sitemap: https://avinash29asf.github.io/AFArt/sitemap.xml
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific directives
+User-agent: bingbot
+Allow: /
+Crawl-delay: 1
+
+# Baidu crawler
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Yandex crawler
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# AI Search Engine Optimization
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Block known bad bots / scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow important assets (sketch images, scripts, styles)
+Allow: /*.css
+Allow: /*.js
+Allow: /*.json
+Allow: /*.xml
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+
+# Block potentially sensitive files (if any exist)
+Disallow: /*.git$
+Disallow: /*.env$
+
+# A F Art - hand-drawn pencil sketches and custom portraits
+# Pages are static HTML for fast loading on GitHub Pages
+# Mobile-friendly and SEO-optimized for sketch searches

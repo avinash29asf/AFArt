@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff7a00">
+<title>A F Art - Online Sketch Store | Hand-Drawn Pencil Sketches</title>
+<meta name="description" content="Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art. Custom couple, family and pet sketches made with love.">
+<meta name="keywords" content="A F Art, pencil sketch, custom pencil sketch, portrait sketch, hand drawn sketch, original sketch, custom portrait, couple sketch, family sketch, pet sketch, sketch prints, buy sketches online">
+<meta name="author" content="A F Art">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://avinash29asf.github.io/AFArt/index.html">
+<link rel="alternate" hreflang="en" href="https://avinash29asf.github.io/AFArt/index.html">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="A F Art - Online Sketch Store | Hand-Drawn Pencil Sketches">
+<meta property="og:description" content="Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art. Custom couple, family and pet sketches made with love.">
+<meta property="og:image" content="https://avinash29asf.github.io/AFArt/logo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://avinash29asf.github.io/AFArt/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="A F Art - Online Sketch Store">
+<meta property="og:locale" content="en_IN">
+<meta property="og:image:alt" content="Hand-drawn pencil sketch by A F Art">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@afartsketches">
+<meta name="twitter:creator" content="@afartsketches">
+<meta name="twitter:title" content="A F Art - Online Sketch Store | Hand-Drawn Pencil Sketches">
+<meta name="twitter:description" content="Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art. Custom couple, family and pet sketches made with love.">
+<meta name="twitter:image" content="https://avinash29asf.github.io/AFArt/logo.png">
+<meta name="twitter:image:alt" content="Hand-drawn pencil sketch by A F Art">
+
+<!-- Preconnect for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #ff7a00;
+  --primary-dark: #cc6000;
+  --primary-light: #ffa333;
+  --primary-glow: rgba(255,122,0,0.25);
+  --secondary: #ff7a00;
+  --secondary-dark: #cc6000;
+  --accent: #ff7a00;
+  --accent-dark: #cc6000;
+  
+  --bg: #0f172a;
+  --bg-secondary: #1e293b;
+  --surface: rgba(255,255,255,0.03);
+  --surface-hover: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.1);
+  --text: #f1f5f9;
+  --text-muted: rgba(255,255,255,0.6);
+  --nav-bg: rgba(15,23,42,0.9);
+  --footer-bg: rgba(15,23,42,0.95);
+  --glass: rgba(255,255,255,0.05);
+  
+  --radius: 16px;
+  --radius-sm: 12px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --shadow: 0 10px 40px rgba(0,0,0,0.3);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+body.light {
+  --bg: #f0f9ff;
+  --bg-secondary: #e0f2fe;
+  --surface: rgba(0,0,0,0.02);
+  --surface-hover: rgba(0,0,0,0.04);
+  --border: rgba(0,0,0,0.08);
+  --text: #0f172a;
+  --text-muted: rgba(0,0,0,0.6);
+  --nav-bg: rgba(240,249,255,0.9);
+  --footer-bg: rgba(240,249,255,0.95);
+  --glass: rgba(0,0,0,0.03);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 70px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  transition: all var(--transition);
+}
+
+.nav-left { display: flex; align-items: center; gap: 16px; }
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+  border-radius: 0;
+  max-width: 100%;
+  display: block;
+}
+
+.nav-links {
+  display: flex; gap: 24px;
+  align-items: center;
+}
+
+.nav-links > li {
+  list-style: none;
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  transition: color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 0;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-links a.active { color: var(--primary); }
+.nav-links a.active::after { width: 100%; }
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition);
+  z-index: 1001;
+  box-shadow: var(--shadow);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: var(--primary);
+  color: #fff;
+  padding-left: 26px;
+}
+
+.dropdown-menu a::after { display: none; }
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  transition: transform var(--transition);
+}
+
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-actions {
+  display: flex; gap: 12px; align-items: center;
+}
+
+.nav-btn {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px var(--primary-glow);
+}
+
+.menu-btn { display: none; }
+
+.mobile-tabs { display: none; }
+
+.mobile-dropdown {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition);
+}
+
+.mobile-dropdown.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-dropdown-item {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  display: block;
+}
+
+.mobile-dropdown-item:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.mobile-dropdown-item.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.mobile-submenu {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-submenu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.mobile-submenu a:hover {
+  color: var(--primary);
+  background: var(--surface-hover);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 5% 80px;
+  gap: 50px;
+  position: relative;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.hero-btns {
+  display: flex; gap: 16px; flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  box-shadow: 0 5px 25px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px var(--primary-glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--surface);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  box-shadow: 0 5px 25px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(37, 211, 102, 0.4);
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 600px;
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 200px; height: 200px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(1deg); }
+  50% { transform: translateY(-20px) rotate(-1deg); }
+}
+
+section {
+  padding: 100px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+  transition: all var(--transition);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.service-icon {
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.service-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.products-section {
+  background: var(--bg-secondary);
+  padding: 100px 5%;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.product-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+}
+
+.product-img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  transition: transform var(--transition);
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.product-body {
+  padding: 20px;
+}
+
+.product-body h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.product-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.btn-order {
+  background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition);
+  width: 100%;
+  text-decoration: none;
+}
+
+.btn-order:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 20px rgba(16,185,129,0.3);
+}
+
+.branches-section {
+  background: var(--surface);
+  padding: 80px 5%;
+  border-radius: var(--radius);
+  margin: 0 5%;
+  border: 1px solid var(--border);
+}
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.branch-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.branch-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.branch-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.branch-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.branch-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: gap var(--transition);
+}
+
+.branch-link:hover {
+  gap: 12px;
+}
+
+footer {
+  background: var(--footer-bg);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  padding: 50px 5%;
+  margin-top: 100px;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-brand {
+  grid-column: span 2;
+}
+
+.footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: 1.1rem;
+  transition: all var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-col h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.footer-contact i {
+  color: var(--primary);
+  width: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 100;
+  transition: all var(--transition);
+  box-shadow: 0 5px 25px var(--primary-glow);
+}
+
+#backToTop:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px var(--primary-glow);
+}
+
+#backToTop.show {
+  display: flex;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.overview-section {
+  padding: 80px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.overview-section.dark {
+  background: var(--bg-secondary);
+  padding: 80px 5%;
+  max-width: 100%;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.overview-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.overview-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+
+.overview-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.overview-card-title i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.overview-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.overview-features {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.overview-features li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.overview-features li::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.75rem;
+}
+
+.overview-btn {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.overview-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px var(--primary-glow);
+}
+
+@media (max-width: 968px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-btns {
+    justify-content: center;
+  }
+  
+  .hero-image {
+    max-width: 500px;
+    aspect-ratio: 3 / 2;
+  }
+
+  .product-img-wrap {
+    height: 190px;
+  }
+
+  .overview-card-img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0 20px;
+  }
+
+  .nav-left,
+  .nav-actions {
+    height: 70px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .menu-btn {
+    display: flex;
+  }
+
+  .mobile-tabs {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 4px;
+    border-top: 1px solid var(--border);
+    padding: 6px 0;
+  }
+
+  .mobile-tabs a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.62rem;
+    font-weight: 600;
+    padding: 5px 1px;
+    border-radius: 10px;
+    transition: all var(--transition);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-tabs a i {
+    font-size: 1.15rem;
+  }
+
+  .mobile-tabs a:hover,
+  .mobile-tabs a.active {
+    color: var(--primary);
+    background: var(--surface);
+  }
+  
+  body { padding-top: 126px; }
+  
+  .hero {
+    padding: 30px 5% 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  section, .products-section, .branches-section {
+    padding: 60px 5%;
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-brand {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-btns {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   A F ART - extra styles (cart, overlays, shop, gallery, forms)
+   ============================================================ */
+.cart-badge {
+  position: absolute; top: -4px; right: -4px;
+  background: var(--accent); color: #fff;
+  font-size: 0.68rem; font-weight: 700;
+  min-width: 17px; height: 17px; padding: 0 4px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+.cart-btn { position: relative; }
+
+.afart-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+  z-index: 1400; opacity: 0; visibility: hidden; transition: all var(--transition);
+}
+.cart-drawer {
+  position: fixed; top: 0; right: 0; height: 100vh; width: 380px; max-width: 92vw;
+  background: var(--bg); border-left: 1px solid var(--border);
+  z-index: 1500; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform var(--transition);
+  box-shadow: var(--shadow-lg);
+}
+.cart-drawer.open { transform: translateX(0); }
+.cart-drawer.open ~ #cartOverlay { opacity: 1; visibility: visible; }
+.cart-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 22px; border-bottom: 1px solid var(--border);
+}
+.cart-head h3 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; }
+.cart-close, .modal-close {
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  width: 34px; height: 34px; border-radius: 50%; cursor: pointer;
+  font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: all var(--transition);
+}
+.cart-close:hover, .modal-close:hover { background: var(--primary); color: #fff; }
+.cart-items { flex: 1; overflow-y: auto; padding: 18px 22px; display: flex; flex-direction: column; gap: 16px; }
+.cart-item { display: flex; gap: 12px; align-items: center; }
+.cart-item img { width: 58px; height: 58px; object-fit: cover; border-radius: 10px; }
+.cart-item-info { flex: 1; }
+.cart-item-info strong { display: block; font-size: 0.92rem; }
+.cart-item-info span { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+.cart-qty { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; }
+.cart-qty button {
+  width: 26px; height: 26px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); cursor: pointer; font-size: 0.7rem;
+  display: inline-flex; align-items: center; justify-content: center; transition: all var(--transition);
+}
+.cart-qty button:hover { background: var(--primary); color: #fff; }
+.cart-qty span { min-width: 22px; text-align: center; font-weight: 600; }
+.cart-remove { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.9rem; }
+.cart-remove:hover { color: #ef4444; }
+.cart-foot { padding: 20px 22px; border-top: 1px solid var(--border); }
+.cart-total-row { display: flex; justify-content: space-between; margin-bottom: 14px; font-size: 1.05rem; }
+.cart-total-row strong { color: var(--primary); }
+
+.afart-modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+  z-index: 1600; display: flex; align-items: center; justify-content: center; padding: 20px;
+  opacity: 0; visibility: hidden; transition: all var(--transition);
+}
+.afart-modal.open { opacity: 1; visibility: visible; }
+.afart-modal-content {
+  background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px; width: 100%; max-width: 460px; position: relative; box-shadow: var(--shadow-lg);
+}
+.modal-close { position: absolute; top: 14px; right: 14px; }
+.afart-input {
+  width: 100%; padding: 12px 14px; margin-bottom: 12px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.95rem;
+}
+.afart-input:focus { outline: none; border-color: var(--primary); }
+textarea.afart-input { resize: vertical; min-height: 80px; font-family: inherit; }
+
+.afart-toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
+  background: var(--primary); color: #fff; padding: 12px 22px; border-radius: 50px;
+  font-size: 0.9rem; font-weight: 600; z-index: 2000; box-shadow: var(--shadow-lg);
+  opacity: 0; visibility: hidden; transition: all var(--transition);
+}
+.afart-toast.show { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+/* Sketch card meta / availability */
+.sketch-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.sketch-price { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--primary); }
+.sketch-cat {
+  font-size: 0.7rem; background: var(--surface); border: 1px solid var(--border);
+  padding: 3px 10px; border-radius: 20px; color: var(--text-muted); text-transform: capitalize;
+}
+.sketch-avail { display: inline-block; font-size: 0.72rem; font-weight: 600; margin-bottom: 10px; padding: 3px 10px; border-radius: 20px; }
+.avail-in { color: #22c55e; background: rgba(34,197,94,0.12); }
+.avail-out { color: #ef4444; background: rgba(239,68,68,0.12); }
+
+/* Sketch details layout */
+.sketch-detail-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.sketch-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 10px 0; }
+.sketch-specs > div {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 12px 14px; display: flex; flex-direction: column; gap: 4px;
+}
+.sketch-specs span { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.sketch-specs strong { font-size: 0.98rem; }
+.detail-qty { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+
+/* Gallery search / filter */
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; padding: 0 5% 40px; max-width: 1400px; margin: 0 auto; }
+.filter-search { flex: 1 1 240px; max-width: 360px; display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 50px; padding: 10px 18px; }
+.filter-search i { color: var(--primary); }
+.filter-search input { background: none; border: none; color: var(--text); font-size: 0.95rem; width: 100%; outline: none; }
+
+@media (max-width: 768px) {
+  .sketch-detail-layout { grid-template-columns: 1fr; gap: 24px; }
+  .cart-drawer { width: 100%; max-width: 100vw; }
+}
+</style>
+<!-- JSON-LD Schema - Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "A F Art",
+  "url": "https://avinash29asf.github.io/AFArt/",
+  "logo": "logo.png",
+  "description": "A F Art is an online sketch store offering hand-drawn pencil sketches, custom portrait sketches, couple and family sketches, pet sketches, original artwork and sketch prints.",
+  "founder": { "@type": "Person", "name": "A F Art" },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-7420806178",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"]
+    }
+  ],
+  "sameAs": [
+    "https://wa.me/917420806178",
+    "https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs"
+  ]
+}
+</script>
+
+<!-- JSON-LD Schema - Website -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "A F Art - Online Sketch Store",
+  "url": "https://avinash29asf.github.io/AFArt/",
+  "description": "Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art.",
+  "publisher": { "@type": "Organization", "name": "A F Art" }
+}
+</script>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<!-- ========== NAVBAR ========== -->
+<nav aria-label="Main navigation" role="navigation">
+  <div class="nav-left">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <img src="logo.png" alt="A F Art Logo" class="logo-img" width="50" height="50">
+    </a>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" class="active" aria-current="page">Home</a>
+    <a href="product.html" >Daily Sketches</a>
+    <a href="product.html" >Shop</a>
+    <a href="services.html" >Services</a>
+    <a href="gallery.html" >Gallery</a>
+    <a href="about.html" >About</a>
+    <a href="faq.html" >FAQ</a>
+    <a href="contact.html" >Contact</a>
+  </div>
+  <div class="nav-actions">
+    <div class="nav-btn" onclick="openCart()" aria-label="Cart" role="button" tabindex="0">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-badge" id="cartCount">0</span>
+    </div>
+    <div class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle theme" role="button" tabindex="0">
+      <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+    <div class="nav-btn menu-btn" onclick="toggleDropdown()" aria-label="Menu" role="button" tabindex="0" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-dropdown" id="mobileDropdown" aria-hidden="true">
+    <a href="index.html" class="mobile-dropdown-item class="active" aria-current="page"">Home</a>
+    <a href="product.html" class="mobile-dropdown-item ">Daily Sketches</a>
+    <a href="product.html" class="mobile-dropdown-item ">Shop</a>
+    <a href="services.html" class="mobile-dropdown-item ">Services</a>
+    <a href="gallery.html" class="mobile-dropdown-item ">Gallery</a>
+    <a href="about.html" class="mobile-dropdown-item ">About</a>
+    <a href="faq.html" class="mobile-dropdown-item ">FAQ</a>
+    <a href="contact.html" class="mobile-dropdown-item ">Contact</a>
+  </div>
+
+  <!-- Mobile Tab Bar -->
+  <div class="mobile-tabs">
+    <a href="index.html" class="class="active" aria-current="page"" aria-label="Home"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="product.html" class="" aria-label="Daily Sketches"><i class="fas fa-pen-nib"></i><span>Sketches</span></a>
+    <a href="product.html" class="" aria-label="Shop"><i class="fas fa-store"></i><span>Shop</span></a>
+    <a href="services.html" class="" aria-label="Services"><i class="fas fa-palette"></i><span>Services</span></a>
+    <a href="gallery.html" class="" aria-label="Gallery"><i class="fas fa-images"></i><span>Gallery</span></a>
+    <a href="about.html" class="" aria-label="About"><i class="fas fa-user"></i><span>About</span></a>
+    <a href="faq.html" class="" aria-label="FAQ"><i class="fas fa-question-circle"></i><span>FAQ</span></a>
+    <a href="contact.html" class="" aria-label="Contact"><i class="fas fa-phone"></i><span>Contact</span></a>
+  </div>
+</nav>
+<!-- ========== HERO SECTION ========== -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-palette" aria-hidden="true"></i> Hand-Drawn Pencil Sketches
+    </div>
+    <h1>Beautiful Hand-Drawn <span>Art Sketches</span></h1>
+    <p>A F Art is an online sketch store where every drawing is handcrafted. Order <strong>custom portrait sketches</strong>, <strong>pencil sketches</strong>, couple &amp; family sketches, and <strong>original artwork</strong> made with love and attention to detail.</p>
+    <div class="hero-btns">
+      <a href="product.html" class="btn btn-primary">
+        <i class="fas fa-store" aria-hidden="true"></i> Shop Sketches
+      </a>
+      <a href="index.html#custom" class="btn btn-outline">
+        <i class="fas fa-pen-fancy" aria-hidden="true"></i> Custom Sketch Order
+      </a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="sketch-001.jpg" alt="Hand drawn pencil portrait sketch by A F Art" width="600" height="400">
+  </div>
+</section>
+
+<!-- ========== INTRODUCTION ========== -->
+<section aria-labelledby="intro-title">
+  <div class="section-header">
+    <span class="section-label">Welcome to A F Art</span>
+    <h2 class="section-title" id="intro-title">Original Hand-Drawn Sketches, Crafted With Passion</h2>
+    <p class="section-sub">A F Art turns your favourite photos and memories into beautiful pencil sketches. From portraits and couples to families and pets, every artwork is drawn by hand and delivered as an original piece you will treasure for years.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-pen-nib" aria-hidden="true"></i></div>
+      <h3>100% Hand-Drawn</h3>
+      <p>Every sketch is created by hand with pencils, never digitally automated, so each piece is a unique original artwork.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+      <h3>Custom Portraits</h3>
+      <p>Send us any clear photo and receive a beautiful custom portrait sketch of a person, couple, family or pet.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-gem" aria-hidden="true"></i></div>
+      <h3>Premium Quality</h3>
+      <p>We use quality paper and fine art pencils for detailed shading, sharp details, and long-lasting artwork.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-truck-fast" aria-hidden="true"></i></div>
+      <h3>Easy Ordering</h3>
+      <p>Order in minutes through WhatsApp. Select your sketch, share your photo, and we handle the rest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LATEST DAILY SKETCHES ========== -->
+<div class="products-section" id="latest">
+  <div class="section-header">
+    <span class="section-label">Fresh Every Day</span>
+    <h2 class="section-title">Latest Daily Sketches</h2>
+    <p class="section-sub">A new hand-drawn sketch is added every day. Check back often to see fresh artwork from A F Art.</p>
+  </div>
+  <div class="products-grid" id="latestSketches"></div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="product.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View All Sketches</a>
+  </div>
+</div>
+
+<!-- ========== FEATURED SKETCHES ========== -->
+<section id="featured">
+  <div class="section-header">
+    <span class="section-label">Handpicked Artwork</span>
+    <h2 class="section-title">Featured Sketches</h2>
+    <p class="section-sub">Our most-loved pencil sketches, ready for you to order as originals or prints.</p>
+  </div>
+  <div class="products-grid" id="featuredSketches"></div>
+</section>
+
+<!-- ========== CUSTOM SKETCH ORDER ========== -->
+<div class="branches-section" id="custom">
+  <div class="section-header">
+    <span class="section-label">Made Just For You</span>
+    <h2 class="section-title">Custom Sketch Orders</h2>
+    <p class="section-sub">Want a sketch from your own photo? Tell us what you need and we will draw it for you.</p>
+  </div>
+  <div class="branches-grid">
+    <div class="branch-card">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:12px;"><i class="fas fa-magnifying-glass-plus"></i> How Custom Order Works</h3>
+      <ul class="overview-features">
+        <li>Choose your sketch type (portrait, couple, family, pet, custom art)</li>
+        <li>Pick a size (A5, A4, A3)</li>
+        <li>Share your reference photo on WhatsApp</li>
+        <li>We confirm price &amp; delivery time</li>
+        <li>Receive your hand-drawn sketch</li>
+      </ul>
+      <p style="margin-top:12px;color:var(--text-muted);font-size:0.92rem;">Reference photos are shared directly on WhatsApp &mdash; no file upload required.</p>
+    </div>
+    <div class="branch-card">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:12px;"><i class="fas fa-paper-plane"></i> Order Your Custom Sketch</h3>
+      <p style="font-size:0.95rem;line-height:1.7;margin-bottom:16px;">Fill in the form and your details will be sent to us on WhatsApp. We will get back to you with a quote and timeline.</p>
+      <form id="customSketchForm">
+        <input class="afart-input" id="csName" type="text" placeholder="Your Name" required>
+        <input class="afart-input" id="csMobile" type="tel" placeholder="Mobile Number" required>
+        <input class="afart-input" id="csEmail" type="email" placeholder="Email (optional)">
+        <select class="afart-input" id="csType">
+          <option value="Portrait Sketch">Portrait Sketch</option>
+          <option value="Couple Sketch">Couple Sketch</option>
+          <option value="Family Sketch">Family Sketch</option>
+          <option value="Pet Sketch">Pet Sketch</option>
+          <option value="Pencil Portrait">Pencil Portrait</option>
+          <option value="Custom Artwork">Custom Artwork</option>
+        </select>
+        <select class="afart-input" id="csSize">
+          <option value="A5">A5</option>
+          <option value="A4">A4</option>
+          <option value="A3">A3</option>
+        </select>
+        <select class="afart-input" id="csPersons">
+          <option value="1">1 Person</option>
+          <option value="2">2 Persons</option>
+          <option value="3">3 Persons</option>
+          <option value="4">4 Persons</option>
+          <option value="5+">5+ Persons</option>
+        </select>
+        <textarea class="afart-input" id="csInstructions" placeholder="Instructions / details for your sketch (optional)"></textarea>
+        <button class="btn btn-whatsapp" style="width:100%" type="submit">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Send Reference Photo on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== SHOP SKETCHES ========== -->
+<div class="products-section" id="shop">
+  <div class="section-header">
+    <span class="section-label">Buy Artwork</span>
+    <h2 class="section-title">Shop Sketches</h2>
+    <p class="section-sub">Browse available sketches to buy as <strong>original artwork</strong>, <strong>prints</strong>, or <strong>digital files</strong>.</p>
+  </div>
+  <div class="products-grid" id="shopSketches"></div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="product.html" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Go to Sketch Shop</a>
+  </div>
+</div>
+
+<!-- ========== GALLERY PREVIEW ========== -->
+<section>
+  <div class="section-header">
+    <span class="section-label">Our Work</span>
+    <h2 class="section-title">Sketch Gallery</h2>
+    <p class="section-sub">See the range of pencil sketches, portrait sketches, custom sketches, and original artwork by A F Art.</p>
+  </div>
+  <div style="text-align:center;">
+    <a href="gallery.html" class="btn btn-outline"><i class="fas fa-images"></i> Explore Full Gallery</a>
+  </div>
+</section>
+
+<!-- ========== HOW TO ORDER / CTA ========== -->
+<div class="branches-section">
+  <div class="section-header">
+    <span class="section-label">Get Started</span>
+    <h2 class="section-title">How to Order a Sketch</h2>
+    <p class="section-sub">Ordering beautiful art has never been easier.</p>
+  </div>
+  <div class="overview-grid">
+    <div class="overview-card">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-store"></i> 1. Choose a Sketch</h3>
+        <p class="overview-card-desc">Browse the shop and pick a ready sketch, or request a custom drawing from your own photo.</p>
+      </div>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-cart-plus"></i> 2. Add to Cart & Checkout</h3>
+        <p class="overview-card-desc">Add sketches to your cart, enter your name, mobile and address, and place your order.</p>
+      </div>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fab fa-whatsapp"></i> 3. Confirm on WhatsApp</h3>
+        <p class="overview-card-desc">Your order arrives on WhatsApp with an Order ID. Confirm details and payment, and we start drawing.</p>
+      </div>
+    </div>
+    <div class="overview-card">
+      <div class="overview-card-body">
+        <h3 class="overview-card-title"><i class="fas fa-truck-fast"></i> 4. Delivery</h3>
+        <p class="overview-card-desc">Receive your hand-drawn sketch delivered to your address, ready to frame and treasure.</p>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://wa.me/917420806178" class="btn btn-whatsapp">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i> Order on WhatsApp
+    </a>
+  </div>
+</div>
+<footer role="contentinfo">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none;display:inline-block;">
+        <div class="footer-logo">A F Art</div>
+      </a>
+      <p class="footer-desc">A F Art is an online sketch store offering hand-drawn pencil sketches, portrait sketches, custom portrait orders, couple &amp; family sketches, pet sketches, and original artwork. Every piece is handcrafted with passion and delivered with care.</p>
+      <div class="social-links">
+        <a href="https://wa.me/917420806178" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/a_f_computer?igsh=MTlpdmxjYnY1cHZs" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Sketch Shop</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Daily Sketches</a></li>
+        <li><a href="product.html">Sketch Shop</a></li>
+        <li><a href="gallery.html">Sketch Gallery</a></li>
+        <li><a href="services.html">Sketch Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul class="footer-links">
+        <li><a href="about.html">About A F Art</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html#custom">Custom Sketch</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/917420806178">WhatsApp Us</a></p>
+      <p><i class="fas fa-phone"></i> <a href="tel:7420806178">+91 7420806178</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:afart.sketches@gmail.com">afart.sketches@gmail.com</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Online Sketch Store</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 <a href="index.html">A F Art</a>. All rights reserved. | <a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+    <p style="margin-top: 8px;"><strong>Pencil Sketch</strong> | <strong>Custom Portrait Sketch</strong> | <strong>Original Sketch</strong> | <strong>Hand Drawn Sketch</strong></p>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<script>
+// Theme Toggle
+const themeIcon = document.getElementById('theme-icon');
+if(localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light');
+  themeIcon.className = 'fas fa-sun';
+}
+
+function toggleTheme() {
+  document.body.classList.toggle('light');
+  if(document.body.classList.contains('light')) {
+    themeIcon.className = 'fas fa-sun';
+    localStorage.setItem('theme', 'light');
+  } else {
+    themeIcon.className = 'fas fa-moon';
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+// Mobile Dropdown Toggle
+function toggleDropdown() {
+  const dropdown = document.getElementById('mobileDropdown');
+  const menuBtn = document.querySelector('.menu-btn');
+  dropdown.classList.toggle('active');
+  const isExpanded = dropdown.classList.contains('active');
+  menuBtn.setAttribute('aria-expanded', isExpanded);
+  dropdown.setAttribute('aria-hidden', !isExpanded);
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const dropdown = document.getElementById('mobileDropdown');
+  const menuBtn = document.querySelector('.menu-btn');
+  if (!dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
+    dropdown.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    dropdown.setAttribute('aria-hidden', 'true');
+  }
+});
+
+// Scroll Reveal Animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.service-card, .product-card, .branch-card, .overview-card').forEach(el => {
+  observer.observe(el);
+});
+
+// Back to Top Button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 500) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Keyboard accessibility for theme toggle and menu
+document.querySelectorAll('.nav-btn').forEach(btn => {
+  btn.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
+});
+</script>
+
+
+
+<!-- ========== A F ART CART & OVERLAYS ========== -->
+<div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-head">
+    <h3>Your Cart (<span id="cartCount2">0</span>)</h3>
+    <button class="cart-close" onclick="closeCart()" aria-label="Close cart"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-total-row"><span>Total</span><strong id="cartTotal">0</strong></div>
+    <button class="btn btn-primary" style="width:100%" onclick="openCheckout()"><i class="fab fa-whatsapp"></i> Checkout &amp; Order</button>
+  </div>
+</div>
+<div id="cartOverlay" class="afart-overlay"></div>
+
+<div id="checkoutModal" class="afart-modal" aria-hidden="true">
+  <div class="afart-modal-content">
+    <button class="modal-close" onclick="closeCheckout()" aria-label="Close">&times;</button>
+    <h3>Complete Your Order</h3>
+    <p style="color:var(--text-muted);margin:6px 0 18px;">Your order will be confirmed on WhatsApp. Fill in your delivery details below.</p>
+    <form onsubmit="event.preventDefault(); placeOrder();">
+      <input id="orderName" type="text" placeholder="Full Name" required class="afart-input">
+      <input id="orderMobile" type="tel" placeholder="Mobile Number" required class="afart-input">
+      <textarea id="orderAddress" placeholder="Delivery Address" required class="afart-input"></textarea>
+      <button class="btn btn-whatsapp" style="width:100%" type="submit"><i class="fab fa-whatsapp"></i> Place Order on WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<div id="lightbox" class="afart-modal" aria-hidden="true">
+  <div class="afart-modal-content" style="max-width:720px">
+    <button class="modal-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="" style="width:100%;border-radius:var(--radius);margin-bottom:14px;">
+    <h3 id="lightboxTitle" style="font-family:'Poppins',sans-serif;font-size:1.4rem;margin-bottom:6px;"></h3>
+    <p id="lightboxMeta" style="color:var(--text-muted);margin-bottom:16px;"></p>
+    <a id="lightboxView" class="btn btn-primary" href="#" style="text-decoration:none;display:inline-flex;"><i class="fas fa-eye"></i> View &amp; Order</a>
+  </div>
+</div>
+<script src="sketches.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
