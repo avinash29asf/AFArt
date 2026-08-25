@@ -249,7 +249,8 @@ function renderDetails() {
         </div>
         <div class="hero-btns" style="margin-top:24px">
           <button class="btn btn-primary" onclick="detailsAddToCart()"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-          <button class="btn btn-whatsapp" onclick="detailsEnquire()"><i class="fab fa-whatsapp"></i> WhatsApp Enquiry</button>
+          <button class="btn btn-whatsapp" onclick="detailsBuyNow()"><i class="fas fa-bolt"></i> Buy Now</button>
+          <button class="btn btn-outline" onclick="detailsEnquire()"><i class="fab fa-whatsapp"></i> WhatsApp Enquiry</button>
         </div>
         <a class="btn btn-outline" href="product.html" style="margin-top:12px"><i class="fas fa-arrow-left"></i> Back to Shop</a>
       </div>
@@ -266,6 +267,12 @@ function setDetailQty(d) {
 function detailsAddToCart() {
     if (!window.detailSketch || !window.detailSketch.available) { toast('This sketch is currently unavailable.'); return; }
     addToCart(window.detailSketch.id, window.detailQty || 1);
+}
+function detailsBuyNow() {
+    if (!window.detailSketch || !window.detailSketch.available) { toast('This sketch is currently unavailable.'); return; }
+    addToCart(window.detailSketch.id, window.detailQty || 1);
+    openCart();
+    openCheckout();
 }
 function detailsEnquire() {
     const s = window.detailSketch;
@@ -306,8 +313,35 @@ function revealContainer(container) {
     container.querySelectorAll('.product-card, .overview-card, .service-card').forEach((el) => el.classList.add('visible'));
 }
 
+/* ---------- Keep WhatsApp / phone links & numbers in sync ----------
+   WHATSAPP_NUMBER above is the single source of truth. Static links in
+   the HTML act as a no-JS fallback; this rewrites them at runtime so
+   changing the config updates every page automatically. */
+function syncContactDetails() {
+    const digits = String(WHATSAPP_NUMBER).replace(/\D/g, '');
+    if (!digits) return;
+    const pretty = (digits.length > 10 && digits.indexOf('91') === 0)
+        ? '+91 ' + digits.slice(2)
+        : '+' + digits;
+
+    document.querySelectorAll('a[href]').forEach((a) => {
+        const href = a.getAttribute('href') || '';
+        if (/^https:\/\/wa\.me\//i.test(href)) {
+            a.setAttribute('href', 'https://wa.me/' + digits);
+        } else if (/^tel:/i.test(href)) {
+            a.setAttribute('href', 'tel:+' + digits);
+        }
+    });
+
+    // visible numbers are wrapped in .js-phone spans in the markup
+    document.querySelectorAll('.js-phone').forEach((el) => {
+        el.textContent = pretty;
+    });
+}
+
 /* ---------- Page-specific initialisation ---------- */
 function initPage() {
+    syncContactDetails();
     updateCartUI();
 
     // Home page sketch sections
@@ -339,6 +373,12 @@ function initPage() {
     const galleryGrid = document.getElementById('galleryGrid');
     if (galleryGrid) {
         galleryGrid.innerHTML = sketches.map(galleryItemHTML).join('');
+        // items are revealed by CSS only with .visible; add it (with stagger) since
+        // the inline observer runs before these dynamic items exist
+        galleryGrid.querySelectorAll('.gallery-item').forEach((el, idx) => {
+            el.style.transitionDelay = (Math.min(idx, 8) * 0.06).toFixed(2) + 's';
+            el.classList.add('visible');
+        });
         setupGalleryFilters();
     }
 
