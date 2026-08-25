@@ -33,7 +33,7 @@ function cardHTML(s) {
     return `
     <div class="product-card" data-id="${s.id}" onclick="window.location.href='product.html?id=${s.id}'">
       <div class="product-img-wrap">
-        <img src="${s.image}" alt="${escapeAttr(s.title)} by A F Art" loading="lazy">
+        <img src="${s.image}" alt="${escapeAttr(s.title)} by A F Art" width="600" height="400" loading="lazy">
         ${badge}
       </div>
       <div class="product-body">
@@ -54,7 +54,7 @@ function cardHTML(s) {
 function galleryItemHTML(s) {
     return `
     <div class="gallery-item" data-cat="${escapeAttr((s.category||'').toLowerCase())} ${escapeAttr((s.type||'').toLowerCase())}" data-filtertext="${escapeAttr((s.title+' '+(s.category||'')+' '+(s.type||'')).toLowerCase())}" onclick="openLightbox(${s.id})">
-      <img src="${s.image}" alt="${escapeAttr(s.title)} by A F Art">
+      <img src="${s.image}" alt="${escapeAttr(s.title)} by A F Art" width="600" height="400" loading="lazy">
       <div class="caption">
         <strong>${s.title}</strong>
         <span>${escapeHtml(s.category || s.type)} &middot; ${escapeHtml(s.size)}</span>

@@ -20,8 +20,8 @@
 <meta property="og:title" content="Sketch Services | Custom Portrait & Pencil Sketch by A F Art">
 <meta property="og:description" content="A F Art sketch services - custom portrait sketch, couple sketch, family sketch, pet sketch, pencil portrait, custom artwork, original sketch sale and sketch prints.">
 <meta property="og:image" content="https://avinash29asf.github.io/AFArt/logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
 <meta property="og:url" content="https://avinash29asf.github.io/AFArt/services.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="A F Art - Online Sketch Store">
@@ -40,6 +40,7 @@
 <!-- Preconnect for Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -1058,40 +1059,86 @@ textarea.afart-input { resize: vertical; min-height: 80px; font-family: inherit;
 }
 [id] { scroll-margin-top: 96px; }
 </style>
-<!-- JSON-LD Schema - Organization -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "A F Art",
-  "url": "https://avinash29asf.github.io/AFArt/",
-  "logo": "logo.png",
-  "description": "A F Art is an online sketch store offering hand-drawn pencil sketches, custom portrait sketches, couple and family sketches, pet sketches, original artwork and sketch prints.",
-  "founder": { "@type": "Person", "name": "A F Art" },
-  "contactPoint": [
+  "@graph": [
     {
-      "@type": "ContactPoint",
+      "@type": "Organization",
+      "@id": "https://avinash29asf.github.io/AFArt/#organization",
+      "name": "A F Art",
+      "url": "https://avinash29asf.github.io/AFArt/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://avinash29asf.github.io/AFArt/#logo",
+        "url": "https://avinash29asf.github.io/AFArt/logo.png",
+        "contentUrl": "https://avinash29asf.github.io/AFArt/logo.png",
+        "width": 512,
+        "height": 512,
+        "caption": "A F Art - Online Sketch Store logo"
+      },
+      "image": { "@id": "https://avinash29asf.github.io/AFArt/#logo" },
+      "description": "A F Art is an online sketch store offering hand-drawn pencil sketches, custom portrait sketches, couple and family sketches, pet sketches, original artwork and sketch prints.",
+      "founder": { "@type": "Person", "name": "A F Art" },
+      "email": "avinash29asf@gmail.com",
       "telephone": "+91-7420806178",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Hindi"]
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-7420806178",
+        "contactType": "customer service",
+        "email": "avinash29asf@gmail.com",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://wa.me/917420806178",
+        "https://www.instagram.com/avinash_29avi"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://avinash29asf.github.io/AFArt/#website",
+      "url": "https://avinash29asf.github.io/AFArt/",
+      "name": "A F Art - Online Sketch Store",
+      "description": "Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art.",
+      "publisher": { "@id": "https://avinash29asf.github.io/AFArt/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://avinash29asf.github.io/AFArt/services.html#webpage",
+      "url": "https://avinash29asf.github.io/AFArt/services.html",
+      "name": "Sketch Services | Custom Portrait & Pencil Sketch by A F Art",
+      "description": "A F Art sketch services - custom portrait sketch, couple sketch, family sketch, pet sketch, pencil portrait, custom artwork, original sketch sale and sketch prints.",
+      "isPartOf": { "@id": "https://avinash29asf.github.io/AFArt/#website" },
+      "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" },
+      "mainEntity": { "@id": "https://avinash29asf.github.io/AFArt/services.html#services" },
+      "breadcrumb": { "@id": "https://avinash29asf.github.io/AFArt/services.html#breadcrumb" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://avinash29asf.github.io/AFArt/services.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://avinash29asf.github.io/AFArt/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://avinash29asf.github.io/AFArt/services.html" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://avinash29asf.github.io/AFArt/services.html#services",
+      "name": "A F Art Sketch Services",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Custom Portrait Sketch", "serviceType": "Custom portrait sketch", "description": "Hand-drawn pencil portrait sketch of one person created from your photo.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/contact.html#custom" } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Couple Sketch", "serviceType": "Couple sketch", "description": "Romantic couple pencil sketch capturing your special moments together with soft, realistic shading.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/contact.html#custom" } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Family Sketch", "serviceType": "Family sketch", "description": "Beautiful family portrait sketch, perfect for gifting. Every member drawn with care and detail.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/contact.html#custom" } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Pet Sketch", "serviceType": "Pet sketch", "description": "Adorable hand-drawn pencil sketch of your beloved pet, capturing personality with expressive, lifelike eyes.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/contact.html#custom" } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Pencil Portrait", "serviceType": "Pencil portrait drawing", "description": "Detailed pencil portrait drawing with realistic shading and fine line work on premium paper.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/product.html" } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "Custom Artwork", "serviceType": "Custom artwork", "description": "Original custom artwork drawn to your exact idea and reference. A one-of-a-kind hand-drawn piece.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/contact.html#custom" } },
+        { "@type": "ListItem", "position": 7, "item": { "@type": "Service", "name": "Original Sketch Sale", "serviceType": "Original artwork sale", "description": "Buy one-of-a-kind original hand-drawn sketches directly from the A F Art online sketch store.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/product.html" } },
+        { "@type": "ListItem", "position": 8, "item": { "@type": "Service", "name": "Sketch Prints", "serviceType": "Art prints", "description": "High-quality prints of finished pencil portraits, ready to frame. Great for keepsakes and gifting.", "provider": { "@id": "https://avinash29asf.github.io/AFArt/#organization" }, "url": "https://avinash29asf.github.io/AFArt/product.html" } }
+      ]
     }
-  ],
-  "sameAs": [
-    "https://wa.me/917420806178",
-    "https://www.instagram.com/avinash_29avi"
   ]
-}
-</script>
-
-<!-- JSON-LD Schema - Website -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "A F Art - Online Sketch Store",
-  "url": "https://avinash29asf.github.io/AFArt/",
-  "description": "Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art.",
-  "publisher": { "@type": "Organization", "name": "A F Art" }
 }
 </script>
 </head>

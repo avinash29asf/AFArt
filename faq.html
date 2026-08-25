@@ -20,8 +20,8 @@
 <meta property="og:title" content="Sketch FAQs | A F Art Online Sketch Store">
 <meta property="og:description" content="Frequently asked questions about ordering hand-drawn pencil sketches, custom portraits, sketch sizes, delivery and contacting A F Art.">
 <meta property="og:image" content="https://avinash29asf.github.io/AFArt/logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
 <meta property="og:url" content="https://avinash29asf.github.io/AFArt/faq.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="A F Art - Online Sketch Store">
@@ -40,6 +40,7 @@
 <!-- Preconnect for Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -1001,40 +1002,86 @@ textarea.afart-input { resize: vertical; min-height: 80px; font-family: inherit;
 }
 [id] { scroll-margin-top: 96px; }
 </style>
-<!-- JSON-LD Schema - Organization -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "A F Art",
-  "url": "https://avinash29asf.github.io/AFArt/",
-  "logo": "logo.png",
-  "description": "A F Art is an online sketch store offering hand-drawn pencil sketches, custom portrait sketches, couple and family sketches, pet sketches, original artwork and sketch prints.",
-  "founder": { "@type": "Person", "name": "A F Art" },
-  "contactPoint": [
+  "@graph": [
     {
-      "@type": "ContactPoint",
+      "@type": "Organization",
+      "@id": "https://avinash29asf.github.io/AFArt/#organization",
+      "name": "A F Art",
+      "url": "https://avinash29asf.github.io/AFArt/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://avinash29asf.github.io/AFArt/#logo",
+        "url": "https://avinash29asf.github.io/AFArt/logo.png",
+        "contentUrl": "https://avinash29asf.github.io/AFArt/logo.png",
+        "width": 512,
+        "height": 512,
+        "caption": "A F Art - Online Sketch Store logo"
+      },
+      "image": { "@id": "https://avinash29asf.github.io/AFArt/#logo" },
+      "description": "A F Art is an online sketch store offering hand-drawn pencil sketches, custom portrait sketches, couple and family sketches, pet sketches, original artwork and sketch prints.",
+      "founder": { "@type": "Person", "name": "A F Art" },
+      "email": "avinash29asf@gmail.com",
       "telephone": "+91-7420806178",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Hindi"]
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-7420806178",
+        "contactType": "customer service",
+        "email": "avinash29asf@gmail.com",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "sameAs": [
+        "https://wa.me/917420806178",
+        "https://www.instagram.com/avinash_29avi"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://avinash29asf.github.io/AFArt/#website",
+      "url": "https://avinash29asf.github.io/AFArt/",
+      "name": "A F Art - Online Sketch Store",
+      "description": "Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art.",
+      "publisher": { "@id": "https://avinash29asf.github.io/AFArt/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://avinash29asf.github.io/AFArt/faq.html#webpage",
+      "url": "https://avinash29asf.github.io/AFArt/faq.html",
+      "name": "Sketch FAQs | A F Art Online Sketch Store",
+      "description": "Frequently asked questions about ordering hand-drawn pencil sketches, custom portraits, sketch sizes, delivery and contacting A F Art.",
+      "isPartOf": { "@id": "https://avinash29asf.github.io/AFArt/#website" },
+      "mainEntity": { "@id": "https://avinash29asf.github.io/AFArt/faq.html#faq" },
+      "breadcrumb": { "@id": "https://avinash29asf.github.io/AFArt/faq.html#breadcrumb" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://avinash29asf.github.io/AFArt/faq.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://avinash29asf.github.io/AFArt/" },
+        { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://avinash29asf.github.io/AFArt/faq.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://avinash29asf.github.io/AFArt/faq.html#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "How can I order a sketch?", "acceptedAnswer": { "@type": "Answer", "text": "Browse the Sketch Shop, add your chosen sketch to the cart, checkout with your name, mobile and address, and confirm your order on WhatsApp. You can also message us directly on WhatsApp to place an order." } },
+        { "@type": "Question", "name": "Do you accept custom portrait orders?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Custom portraits are our speciality. You can order a custom portrait sketch, couple sketch, family sketch, pet sketch, or custom artwork from your own photo on the Custom Sketch form." } },
+        { "@type": "Question", "name": "What photo should I send?", "acceptedAnswer": { "@type": "Answer", "text": "Send a clear, well-lit and in-focus photo. A high-resolution image with the face visible works best for a detailed pencil sketch. Group photos work too for couple and family sketches." } },
+        { "@type": "Question", "name": "How can I send my reference photo?", "acceptedAnswer": { "@type": "Answer", "text": "You can attach your reference photo directly in WhatsApp when you place your custom order. After submitting the Custom Sketch form, simply send your photo to our WhatsApp number." } },
+        { "@type": "Question", "name": "How long does a custom sketch take?", "acceptedAnswer": { "@type": "Answer", "text": "Most custom sketches are completed within 3-5 days depending on size and complexity. We always confirm the delivery time before we start your order." } },
+        { "@type": "Question", "name": "What sketch sizes are available?", "acceptedAnswer": { "@type": "Answer", "text": "We offer A5, A4 and A3 sizes for original sketches and prints. Digital files are delivered as high-resolution images. Choose the size that suits your needs when ordering." } },
+        { "@type": "Question", "name": "Do you sell original sketches?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we sell one-of-a-kind original sketches in the Shop. Each original is hand-drawn and unique. We also offer prints and digital files." } },
+        { "@type": "Question", "name": "Do you provide framed sketches?", "acceptedAnswer": { "@type": "Answer", "text": "Framed sketches are available on request. Just let us know on WhatsApp when placing your order and we will arrange framing for an additional charge." } },
+        { "@type": "Question", "name": "How is delivery handled?", "acceptedAnswer": { "@type": "Answer", "text": "Original sketches and prints are packed safely and delivered to your address. Digital sketches are sent directly to your WhatsApp or email. Delivery times and charges are confirmed at checkout." } },
+        { "@type": "Question", "name": "How can I contact A F Art?", "acceptedAnswer": { "@type": "Answer", "text": "Reach us anytime on WhatsApp, by phone at +91 7420806178, or by email at avinash29asf@gmail.com. Visit the Contact page for more ways to reach us." } }
+      ]
     }
-  ],
-  "sameAs": [
-    "https://wa.me/917420806178",
-    "https://www.instagram.com/avinash_29avi"
   ]
-}
-</script>
-
-<!-- JSON-LD Schema - Website -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "A F Art - Online Sketch Store",
-  "url": "https://avinash29asf.github.io/AFArt/",
-  "description": "Buy hand-drawn pencil sketches, custom portrait sketches, original artwork and sketch prints online from A F Art.",
-  "publisher": { "@type": "Organization", "name": "A F Art" }
 }
 </script>
 </head>
