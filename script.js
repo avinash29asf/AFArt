@@ -218,6 +218,23 @@ function renderDetails() {
 
     document.getElementById('shopGridWrap').style.display = 'none';
     el.style.display = 'block';
+
+    // Hide the static shop page-header (its H1) so a product detail page has exactly one H1
+    const pageHeader = document.querySelector('.page-header');
+    if (pageHeader) pageHeader.style.display = 'none';
+
+    // Set a unique, keyword-rich title and meta description for this product detail page
+    if (document.querySelector('title')) {
+        document.title = s.title + ' | Hand-Drawn ' + s.category + ' Sketch by A F Art';
+    }
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        metaDesc.setAttribute('content', s.description + ' Available as an original hand-drawn ' + s.category.toLowerCase() + ' sketch at A F Art, priced at ' + formatPrice(s.price) + '.');
+    }
+    const metaCanonical = document.querySelector('link[rel="canonical"]');
+    if (metaCanonical) {
+        metaCanonical.setAttribute('href', 'https://avinash29asf.github.io/AFArt/product.html?id=' + s.id);
+    }
     const avail = s.available
         ? '<span class="sketch-avail avail-in">Available</span>'
         : '<span class="sketch-avail avail-out">Currently Unavailable</span>';
@@ -225,7 +242,7 @@ function renderDetails() {
     el.innerHTML = `
     <div class="sketch-detail-layout">
       <div class="sketch-detail-img">
-        <img src="${s.image}" alt="${escapeAttr(s.title)} by A F Art" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow-lg);">
+        <img src="${s.image}" alt="${escapeAttr(s.title)} by A F Art" title="${escapeAttr(s.title)} by A F Art" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow-lg);">
       </div>
       <div class="sketch-detail-info">
         <span class="section-label">${escapeHtml(s.category)} Sketch</span>

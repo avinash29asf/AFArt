@@ -4,7 +4,7 @@
    ------------------------------------------------------------
    HOW TO ADD A NEW SKETCH EACH DAY:
    1. Copy your sketch image into this SAME root folder
-      (e.g. sketch-004.jpg)
+      (e.g. realistic-pencil-eye-sketch.jpg)
    2. Add one new object to the sketches array below
    3. Commit & push to GitHub
 
@@ -17,7 +17,7 @@ const sketches = [
         id: 1,
         title: "Realistic Eye Sketch",
         description: "A finely detailed hand-drawn pencil study of a single eye - rich tonal depth, crisp highlights and lifelike detail on premium paper.",
-        image: "sketch-001.jpg",
+        image: "realistic-pencil-eye-sketch.jpg",
         price: 1099,
         size: "A4",
         category: "Portrait",
@@ -30,7 +30,7 @@ const sketches = [
         id: 2,
         title: "Chhatrapati Shivaji Maharaj Sketch",
         description: "Detailed pencil portrait of Chhatrapati Shivaji Maharaj, capturing the great warrior king with strength, dignity and fine graphite shading.",
-        image: "sketch-002.jpg",
+        image: "chhatrapati-shivaji-maharaj-pencil-sketch.jpg",
         price: 2499,
         size: "A4",
         category: "Portrait",
@@ -43,7 +43,7 @@ const sketches = [
         id: 3,
         title: "Iron Man Sketch",
         description: "Striking pencil sketch of Iron Man in crisp graphite on white paper - bold armour detail, clean line work and a heroic finish.",
-        image: "sketch-003.jpg",
+        image: "iron-man-pencil-sketch.jpg",
         price: 1999,
         size: "A3",
         category: "Portrait",
@@ -56,7 +56,7 @@ const sketches = [
         id: 4,
         title: "Captain Jack Sparrow Sketch",
         description: "Warm-toned charcoal portrait of Captain Jack Sparrow with deep shadows and expressive detail, capturing the iconic pirate's character.",
-        image: "sketch-004.jpg",
+        image: "captain-jack-sparrow-charcoal-sketch.jpg",
         price: 1899,
         size: "A4",
         category: "Portrait",
@@ -69,7 +69,7 @@ const sketches = [
         id: 5,
         title: "Ganpati Sketch",
         description: "Beautifully hand-drawn Lord Ganesha (Ganpati) sketch in warm graphite and charcoal tones - a spiritual, detailed and one-of-a-kind piece.",
-        image: "sketch-005.jpg",
+        image: "ganpati-pencil-sketch.jpg",
         price: 1599,
         size: "A5",
         category: "Portrait",

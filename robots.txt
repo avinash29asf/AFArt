@@ -5,8 +5,8 @@ User-agent: *
 Allow: /
 # Google Search Console verification file must stay crawlable
 Allow: /googlea75de922b485a323.html
-# Internal development artifact - not part of the public website
-Disallow: /tree
+# Never block the individual product (sketch) detail pages
+Allow: /product.html
 Disallow: /*.env$
 Disallow: /.git
 
