@@ -116,5 +116,18 @@ const sketches = [
         type: "Original",
         available: true,
         featured: true
+    },
+    {
+        id: 9,
+        title: "Deadpool & Wolverine Sketch",
+        description: "A5 size hand-drawn pencil sketch of Marvel's most iconic duo - Deadpool and Wolverine. Bold graphite detailing, expressive faces and sharp comic-style shading bring both characters to life on premium paper. Unframed original, perfect for Marvel fans and room decor.",
+        image: "deadpool-and-wolverine-pencil-sketch.jpg",
+        price: 1499,
+        size: "A5",
+        category: "Portrait",
+        date: "2026-09-13",
+        type: "Original",
+        available: true,
+        featured: true
     }
 ];
