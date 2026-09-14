@@ -332,6 +332,12 @@ function renderDetails() {
         ? '<span class="sketch-avail avail-in">Available</span>'
         : '<span class="sketch-avail avail-out">Currently Unavailable</span>';
 
+    // Prev / next + all-sketch thumbnails for the detail view
+    const allSketches = sketches.slice().sort((a, b) => Number(a.id) - Number(b.id));
+    const curIdx = allSketches.findIndex((x) => Number(x.id) === Number(id));
+    const prevS = allSketches[(curIdx - 1 + allSketches.length) % allSketches.length];
+    const nextS = allSketches[(curIdx + 1) % allSketches.length];
+
     el.innerHTML = `
     <div class="sketch-detail-layout">
       <div class="sketch-detail-img">
@@ -367,6 +373,22 @@ function renderDetails() {
           <h3><i class="fas fa-share-alt" style="margin-right:8px;color:var(--primary);"></i>Share this sketch</h3>
           ${shareButtonsHTML(s)}
         </div>
+      </div>
+    </div>
+
+    <div class="detail-nav">
+      <a class="btn btn-outline detail-nav-btn" href="product.html?id=${prevS.id}"><i class="fas fa-arrow-left"></i><span>${escapeHtml(prevS.title)}</span></a>
+      <a class="btn btn-outline detail-nav-btn" href="product.html?id=${nextS.id}"><span>${escapeHtml(nextS.title)}</span><i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="all-sketches">
+      <h3><i class="fas fa-images" style="margin-right:8px;color:var(--primary);"></i>All Sketches</h3>
+      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px;">View every hand-drawn sketch photo &mdash; click any thumbnail to open its detail page.</p>
+      <div class="thumb-strip">
+        ${allSketches.map(function (x) {
+            const active = Number(x.id) === Number(id) ? ' active' : '';
+            return '<a class="thumb-item' + active + '" href="product.html?id=' + x.id + '" title="' + escapeAttr(x.title) + '"><img src="' + x.image + '" alt="' + escapeAttr(x.title) + ' by A F Art" loading="lazy" width="130" height="96"><span>' + escapeHtml(x.title) + '</span></a>';
+        }).join('')}
       </div>
     </div>`;
     window.detailSketch = s;
