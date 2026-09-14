@@ -41,17 +41,21 @@ foreach ($chunk in $chunks) {
     $priceTxt = InrPrice $price
     $shareTxt = 'Check out this beautiful ' + $title + ' hand-drawn sketch by A F Art! ' + $pageUrl
     $buyTxt   = 'I want to buy this ' + $title + ' (' + $priceTxt + ') from A F Art. Please confirm availability and delivery details.'
+    $titleSafe = ($title -replace '[^\w.-]+', '_')
+    $shareTxtJs = $shareTxt.Replace("'", "\'")
 
     $h = $tpl
     $h = $h.Replace('{ID}', $id)
     $h = $h.Replace('{TITLE}', (Esc-Html $title))
     $h = $h.Replace('{TITLE_JSON}', $title)
+    $h = $h.Replace('{TITLE_SAFE}', $titleSafe)
     $h = $h.Replace('{DESC}', (Esc-Html $desc))
     $h = $h.Replace('{DESC_JSON}', $desc)
     $h = $h.Replace('{IMAGE}', $image)
     $h = $h.Replace('{IMG_URL}', $imgUrl)
     $h = $h.Replace('{PAGE_URL}', $pageUrl)
     $h = $h.Replace('{PHOTO_URL}', $imgUrl)
+    $h = $h.Replace('{SHARE_TEXT}', $shareTxtJs)
     $h = $h.Replace('{SIZE}', $size)
     $h = $h.Replace('{CATEGORY}', $cat)
     $h = $h.Replace('{TYPE}', $type)

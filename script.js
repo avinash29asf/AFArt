@@ -82,20 +82,40 @@ function shareButtonsHTML(s) {
     const img = sketchImageURL(s);
     const text = shareMsg(s);
     const enc = encodeURIComponent;
-    const native = (typeof navigator !== "undefined" && navigator.share)
-        ? '<button class="share-btn share-btn-native" onclick="nativeShareSketch(' + s.id + ')" type="button" aria-label="Use phone share"><i class="fas fa-share-alt"></i> Share</button>'
-        : "";
     return `
     <div class="share-row">
       <span class="share-label"><i class="fas fa-share-alt"></i> Share:</span>
-      <a class="share-btn share-btn-wa" href="https://api.whatsapp.com/send?text=${enc(text + " " + url)}" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <button class="share-btn share-btn-img" onclick="shareImage(${s.id})" type="button" aria-label="Share only the photo"><i class="fas fa-image"></i> Image</button>
+      <button class="share-btn share-btn-link" onclick="shareLink(${s.id})" type="button" aria-label="Share only the link"><i class="fas fa-link"></i> Link</button>
+      <button class="share-btn share-btn-both" onclick="shareBoth(${s.id})" type="button" aria-label="Share photo and link together"><i class="fas fa-share-alt"></i> Both</button>
+    </div>
+    <div class="share-row" style="margin-top:10px;">
+      <span class="share-label"><i class="fas fa-paper-plane"></i> To:</span>
+      <div class="share-dd">
+        <button class="share-btn share-btn-ig share-dd-btn" onclick="toggleShareMenu(event, this)" type="button" aria-label="Share to Instagram"><i class="fab fa-instagram"></i> Instagram <i class="fas fa-chevron-down"></i></button>
+        <div class="share-dd-menu">
+          <button type="button" onclick="shareInstagram(${s.id})"><i class="fas fa-image"></i> Image</button>
+          <button type="button" onclick="shareLink(${s.id})"><i class="fas fa-link"></i> Link</button>
+          <button type="button" onclick="shareBoth(${s.id})"><i class="fas fa-share-alt"></i> Both</button>
+        </div>
+      </div>
+      <div class="share-dd">
+        <button class="share-btn share-btn-wa share-dd-btn" onclick="toggleShareMenu(event, this)" type="button" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-chevron-down"></i></button>
+        <div class="share-dd-menu">
+          <button type="button" onclick="shareImage(${s.id})"><i class="fas fa-image"></i> Image</button>
+          <button type="button" onclick="waShareLink(${s.id})"><i class="fas fa-link"></i> Link</button>
+          <button type="button" onclick="shareBoth(${s.id})"><i class="fas fa-share-alt"></i> Both</button>
+        </div>
+      </div>
       <a class="share-btn share-btn-fb" href="https://www.facebook.com/sharer/sharer.php?u=${enc(url)}" target="_blank" rel="noopener" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
       <a class="share-btn share-btn-x" href="https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(text)}" target="_blank" rel="noopener" aria-label="Share on X / Twitter"><i class="fab fa-x-twitter"></i> X</a>
       <a class="share-btn share-btn-pin" href="https://pinterest.com/pin/create/button/?url=${enc(url)}&media=${enc(img)}&description=${enc(text)}" target="_blank" rel="noopener" aria-label="Share photo on Pinterest"><i class="fab fa-pinterest-p"></i> Pinterest</a>
-      <button class="share-btn share-btn-copy" onclick="copySketchLink(${s.id})" type="button" aria-label="Copy page link"><i class="fas fa-link"></i> Copy Page Link</button>
-      <button class="share-btn share-btn-photo" onclick="copyPhotoLink(${s.id})" type="button" aria-label="Copy direct photo link"><i class="fas fa-image"></i> Copy Photo Link</button>
-      <a class="share-btn share-btn-dl" href="${img}" download="${safeName(s)}" target="_blank" rel="noopener" aria-label="Download sketch photo"><i class="fas fa-download"></i> Download Photo</a>
-      ${native}
+    </div>
+    <div class="share-row" style="margin-top:10px;">
+      <span class="share-label"><i class="fas fa-copy"></i> Copy / Save:</span>
+      <button class="share-btn share-btn-copy" onclick="copySketchLink(${s.id})" type="button" aria-label="Copy page link"><i class="fas fa-link"></i> Page Link</button>
+      <button class="share-btn share-btn-photo" onclick="copyPhotoLink(${s.id})" type="button" aria-label="Copy direct photo link"><i class="fas fa-image"></i> Photo Link</button>
+      <a class="share-btn share-btn-dl" href="${img}" download="${safeName(s)}" target="_blank" rel="noopener" aria-label="Download sketch photo"><i class="fas fa-download"></i> Download</a>
     </div>`;
 }
 
@@ -122,6 +142,75 @@ function nativeShareSketch(id) {
     } else {
         doShare(shareContent);
     }
+}
+
+function shareImage(id) {
+    const s = getSketch(id);
+    if (!s) return;
+    const fallback = () => copyPhotoLink(id);
+    if (navigator.canShare) {
+        fetch(sketchImageURL(s))
+            .then((r) => { if (!r.ok) throw new Error("fetch"); return r.blob(); })
+            .then((blob) => {
+                const file = new File([blob], safeName(s), { type: (blob.type || "image/jpeg") });
+                if (navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: s.title + " | A F Art" }).catch(() => {}); return; }
+                fallback();
+            })
+            .catch(() => fallback());
+    } else if (navigator.share) {
+        navigator.share({ title: s.title + " | A F Art", text: shareMsg(s) }).catch(() => {});
+    } else {
+        fallback();
+    }
+}
+
+function shareLink(id) {
+    const s = getSketch(id);
+    if (!s) return;
+    if (navigator.share) {
+        navigator.share({ title: s.title + " | A F Art", text: shareMsg(s), url: sketchURL(s) }).catch(() => {});
+    } else {
+        copySketchLink(id);
+    }
+}
+
+function shareBoth(id) {
+    nativeShareSketch(id);
+}
+
+function shareInstagram(id) {
+    const s = getSketch(id);
+    if (!s) return;
+    const openIg = () => window.open("https://www.instagram.com/avinash_29avi", "_blank", "noopener");
+    if (navigator.canShare) {
+        fetch(sketchImageURL(s))
+            .then((r) => { if (!r.ok) throw new Error("fetch"); return r.blob(); })
+            .then((blob) => {
+                const file = new File([blob], safeName(s), { type: (blob.type || "image/jpeg") });
+                if (navigator.canShare({ files: [file] })) { navigator.share({ files: [file], title: s.title + " | A F Art" }).catch(() => {}); return; }
+                openIg();
+            })
+            .catch(() => openIg());
+    } else if (navigator.share) {
+        navigator.share({ title: s.title + " | A F Art", text: shareMsg(s), url: sketchURL(s) }).catch(() => {});
+    } else {
+        openIg();
+    }
+}
+
+function waShareLink(id) {
+    const s = getSketch(id);
+    if (!s) return;
+    window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(shareMsg(s) + " " + sketchURL(s)), "_blank", "noopener");
+}
+
+function toggleShareMenu(e, btn) {
+    e.stopPropagation();
+    const menu = btn ? btn.parentNode.querySelector('.share-dd-menu') : null;
+    if (!menu) return;
+    const wasOpen = menu.classList.contains('open');
+    document.querySelectorAll('.share-dd-menu.open').forEach((m) => m.classList.remove('open'));
+    if (!wasOpen) menu.classList.add('open');
 }
 
 function copySketchLink(id) {
@@ -602,6 +691,12 @@ document.addEventListener('click', function (e) {
     if (checkout && checkout.classList.contains('open') && e.target && e.target.id === 'checkoutModal') closeCheckout();
     const lb = document.getElementById('lightbox');
     if (lb && lb.classList.contains('open') && e.target && e.target.id === 'lightbox') closeLightbox();
+});
+
+document.addEventListener('click', function (e) {
+    if (!e.target.closest('.share-dd')) {
+        document.querySelectorAll('.share-dd-menu.open').forEach((m) => m.classList.remove('open'));
+    }
 });
 
 document.addEventListener('keydown', function (e) {
