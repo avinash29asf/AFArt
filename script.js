@@ -35,6 +35,7 @@ function cardHTML(s) {
       <div class="product-img-wrap">
         <img src="${s.image}" alt="${escapeAttr(s.title)} by A F Art" width="600" height="400" loading="lazy">
         ${badge}
+        <button class="share-icon-btn" onclick="event.stopPropagation(); shareSketch(${s.id})" aria-label="Share ${escapeAttr(s.title)}" title="Share"><i class="fas fa-share-alt"></i></button>
       </div>
       <div class="product-body">
         <h3>${s.title}</h3>
@@ -67,6 +68,83 @@ function escapeHtml(str) {
 }
 function escapeAttr(str) {
     return String(str).replace(/"/g, '&quot;').replace(/&/g, '&amp;');
+}
+
+/* ---------- Sketch sharing (link + photo) ---------- */
+const SITE_URL = "https://avinash29asf.github.io/AFArt/";
+const sketchURL = (s) => SITE_URL + "product.html?id=" + s.id;
+const sketchImageURL = (s) => SITE_URL + encodeURIComponent(s.image);
+const shareMsg = (s) => "Check out this beautiful " + s.title + " hand-drawn sketch by A F Art! \uD83C\uDFA8\u2728";
+const safeName = (s) => s.title.replace(/[^\w.-]+/g, "_") + ".jpg";
+
+function shareButtonsHTML(s) {
+    const url = sketchURL(s);
+    const img = sketchImageURL(s);
+    const text = shareMsg(s);
+    const enc = encodeURIComponent;
+    const native = (typeof navigator !== "undefined" && navigator.share)
+        ? '<button class="share-btn share-btn-native" onclick="nativeShareSketch(' + s.id + ')" type="button" aria-label="Use phone share"><i class="fas fa-share-alt"></i> Share</button>'
+        : "";
+    return `
+    <div class="share-row">
+      <span class="share-label"><i class="fas fa-share-alt"></i> Share:</span>
+      <a class="share-btn share-btn-wa" href="https://api.whatsapp.com/send?text=${enc(text + " " + url)}" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a class="share-btn share-btn-fb" href="https://www.facebook.com/sharer/sharer.php?u=${enc(url)}" target="_blank" rel="noopener" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a class="share-btn share-btn-x" href="https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(text)}" target="_blank" rel="noopener" aria-label="Share on X / Twitter"><i class="fab fa-x-twitter"></i> X</a>
+      <a class="share-btn share-btn-pin" href="https://pinterest.com/pin/create/button/?url=${enc(url)}&media=${enc(img)}&description=${enc(text)}" target="_blank" rel="noopener" aria-label="Share photo on Pinterest"><i class="fab fa-pinterest-p"></i> Pinterest</a>
+      <button class="share-btn share-btn-copy" onclick="copySketchLink(${s.id})" type="button" aria-label="Copy sketch link"><i class="fas fa-link"></i> Copy Link</button>
+      <a class="share-btn share-btn-dl" href="${img}" download="${safeName(s)}" target="_blank" rel="noopener" aria-label="Download sketch photo"><i class="fas fa-download"></i> Download Photo</a>
+      ${native}
+    </div>`;
+}
+
+function shareSketch(id) {
+    if (navigator && navigator.share) nativeShareSketch(id);
+    else copySketchLink(id);
+}
+
+function nativeShareSketch(id) {
+    const s = getSketch(id);
+    if (!s) return;
+    const shareContent = { title: s.title + " | A F Art", text: shareMsg(s), url: sketchURL(s) };
+    const doShare = (data) => { if (navigator.share) navigator.share(data).catch(() => {}); else copySketchLink(id); };
+    if (navigator.canShare) {
+        fetch(sketchImageURL(s))
+            .then((r) => { if (!r.ok) throw new Error("fetch failed"); return r.blob(); })
+            .then((blob) => {
+                const file = new File([blob], safeName(s), { type: (blob.type || "image/jpeg") });
+                const withFile = Object.assign({ files: [file] }, shareContent);
+                if (navigator.canShare(withFile)) { navigator.share(withFile).catch(() => {}); return; }
+                doShare(shareContent);
+            })
+            .catch(() => doShare(shareContent));
+    } else {
+        doShare(shareContent);
+    }
+}
+
+function copySketchLink(id) {
+    const s = getSketch(id);
+    if (!s) return;
+    const url = sketchURL(s);
+    const done = () => toast("Sketch link copied to clipboard!");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done).catch(() => fallbackCopy(url, done));
+    } else {
+        fallbackCopy(url, done);
+    }
+}
+function fallbackCopy(text, done) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    if (ok) done();
 }
 
 /* ---------- Cart (localStorage) ---------- */
@@ -231,6 +309,21 @@ function renderDetails() {
     if (metaDesc) {
         metaDesc.setAttribute('content', s.description + ' Available as an original hand-drawn ' + s.category.toLowerCase() + ' sketch at A F Art, priced at ' + formatPrice(s.price) + '.');
     }
+    // Refresh Open Graph / Twitter meta so shared links show this sketch's photo & title
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) ogImage.setAttribute('content', sketchImageURL(s));
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', s.title + ' | Hand-Drawn ' + s.category + ' Sketch by A F Art');
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', s.description);
+    const ogAlt = document.querySelector('meta[property="og:image:alt"]');
+    if (ogAlt) ogAlt.setAttribute('content', s.title + ' by A F Art');
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', s.title + ' | A F Art');
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', s.description);
+    const twImg = document.querySelector('meta[name="twitter:image"]');
+    if (twImg) twImg.setAttribute('content', sketchImageURL(s));
     const metaCanonical = document.querySelector('link[rel="canonical"]');
     if (metaCanonical) {
         metaCanonical.setAttribute('href', 'https://avinash29asf.github.io/AFArt/product.html?id=' + s.id);
@@ -270,6 +363,10 @@ function renderDetails() {
           <button class="btn btn-outline" onclick="detailsEnquire()"><i class="fab fa-whatsapp"></i> WhatsApp Enquiry</button>
         </div>
         <a class="btn btn-outline" href="product.html" style="margin-top:12px"><i class="fas fa-arrow-left"></i> Back to Shop</a>
+        <div class="share-block">
+          <h3><i class="fas fa-share-alt" style="margin-right:8px;color:var(--primary);"></i>Share this sketch</h3>
+          ${shareButtonsHTML(s)}
+        </div>
       </div>
     </div>`;
     window.detailSketch = s;
@@ -454,6 +551,8 @@ function openLightbox(id) {
         "<strong>" + escapeHtml(s.category) + "</strong> &middot; " + escapeHtml(s.size) + " &middot; " + formatPrice(s.price);
     const viewLink = document.getElementById('lightboxView');
     if (viewLink) viewLink.href = 'product.html?id=' + s.id;
+    const lbShare = document.getElementById('lightboxShare');
+    if (lbShare) lbShare.innerHTML = shareButtonsHTML(s);
     lb.classList.add('open');
 }
 function closeLightbox() {

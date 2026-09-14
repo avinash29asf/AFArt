@@ -129,5 +129,18 @@ const sketches = [
         type: "Original",
         available: true,
         featured: true
+    },
+    {
+        id: 10,
+        title: "Mother and Daughter Sketch",
+        description: "A5 size heart-warming hand-drawn pencil sketch of a mother and daughter - soft graphite shading, gentle expressions and fine detailing beautifully capture the special bond between them on premium paper. Unframed original, perfect for gifting to your mother or as a treasured family keepsake.",
+        image: "mother and daughter.jpeg",
+        price: 1499,
+        size: "A5",
+        category: "Family",
+        date: "2026-09-14",
+        type: "Original",
+        available: true,
+        featured: true
     }
 ];
