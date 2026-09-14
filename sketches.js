@@ -6,7 +6,12 @@
    1. Copy your sketch image into this SAME root folder
       (e.g. realistic-pencil-eye-sketch.jpg)
    2. Add one new object to the sketches array below
-   3. Commit & push to GitHub
+   3. Run  powershell -File _gen-sketch-pages.ps1
+      to generate the static sketch-N.html share page
+      (THIS page carries the correct photo for WhatsApp /
+      Facebook previews - without it, shared links show the
+      wrong photo)
+   4. Commit & push to GitHub
 
    The new sketch automatically appears on Home, Gallery,
    Shop and Sketch Details pages. No HTML edits needed.

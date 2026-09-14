@@ -72,7 +72,7 @@ function escapeAttr(str) {
 
 /* ---------- Sketch sharing (link + photo) ---------- */
 const SITE_URL = "https://avinash29asf.github.io/AFArt/";
-const sketchURL = (s) => SITE_URL + "product.html?id=" + s.id;
+const sketchURL = (s) => SITE_URL + "sketch-" + s.id + ".html";
 const sketchImageURL = (s) => SITE_URL + encodeURIComponent(s.image);
 const shareMsg = (s) => "Check out this beautiful " + s.title + " hand-drawn sketch by A F Art! \uD83C\uDFA8\u2728";
 const safeName = (s) => s.title.replace(/[^\w.-]+/g, "_") + ".jpg";
@@ -92,7 +92,8 @@ function shareButtonsHTML(s) {
       <a class="share-btn share-btn-fb" href="https://www.facebook.com/sharer/sharer.php?u=${enc(url)}" target="_blank" rel="noopener" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
       <a class="share-btn share-btn-x" href="https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(text)}" target="_blank" rel="noopener" aria-label="Share on X / Twitter"><i class="fab fa-x-twitter"></i> X</a>
       <a class="share-btn share-btn-pin" href="https://pinterest.com/pin/create/button/?url=${enc(url)}&media=${enc(img)}&description=${enc(text)}" target="_blank" rel="noopener" aria-label="Share photo on Pinterest"><i class="fab fa-pinterest-p"></i> Pinterest</a>
-      <button class="share-btn share-btn-copy" onclick="copySketchLink(${s.id})" type="button" aria-label="Copy sketch link"><i class="fas fa-link"></i> Copy Link</button>
+      <button class="share-btn share-btn-copy" onclick="copySketchLink(${s.id})" type="button" aria-label="Copy page link"><i class="fas fa-link"></i> Copy Page Link</button>
+      <button class="share-btn share-btn-photo" onclick="copyPhotoLink(${s.id})" type="button" aria-label="Copy direct photo link"><i class="fas fa-image"></i> Copy Photo Link</button>
       <a class="share-btn share-btn-dl" href="${img}" download="${safeName(s)}" target="_blank" rel="noopener" aria-label="Download sketch photo"><i class="fas fa-download"></i> Download Photo</a>
       ${native}
     </div>`;
@@ -127,7 +128,18 @@ function copySketchLink(id) {
     const s = getSketch(id);
     if (!s) return;
     const url = sketchURL(s);
-    const done = () => toast("Sketch link copied to clipboard!");
+    const done = () => toast("Page link copied to clipboard!");
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done).catch(() => fallbackCopy(url, done));
+    } else {
+        fallbackCopy(url, done);
+    }
+}
+function copyPhotoLink(id) {
+    const s = getSketch(id);
+    if (!s) return;
+    const url = sketchImageURL(s);
+    const done = () => toast("Photo link copied! Opens directly to this sketch photo.");
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(done).catch(() => fallbackCopy(url, done));
     } else {
