@@ -91,22 +91,8 @@ function shareButtonsHTML(s) {
     </div>
     <div class="share-row" style="margin-top:10px;">
       <span class="share-label"><i class="fas fa-paper-plane"></i> To:</span>
-      <div class="share-dd">
-        <button class="share-btn share-btn-ig share-dd-btn" onclick="toggleShareMenu(event, this)" type="button" aria-label="Share to Instagram"><i class="fab fa-instagram"></i> Instagram <i class="fas fa-chevron-down"></i></button>
-        <div class="share-dd-menu">
-          <button type="button" onclick="shareInstagram(${s.id})"><i class="fas fa-image"></i> Image</button>
-          <button type="button" onclick="shareLink(${s.id})"><i class="fas fa-link"></i> Link</button>
-          <button type="button" onclick="shareBoth(${s.id})"><i class="fas fa-share-alt"></i> Both</button>
-        </div>
-      </div>
-      <div class="share-dd">
-        <button class="share-btn share-btn-wa share-dd-btn" onclick="toggleShareMenu(event, this)" type="button" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp <i class="fas fa-chevron-down"></i></button>
-        <div class="share-dd-menu">
-          <button type="button" onclick="shareImage(${s.id})"><i class="fas fa-image"></i> Image</button>
-          <button type="button" onclick="waShareLink(${s.id})"><i class="fas fa-link"></i> Link</button>
-          <button type="button" onclick="shareBoth(${s.id})"><i class="fas fa-share-alt"></i> Both</button>
-        </div>
-      </div>
+      <button class="share-btn share-btn-ig" onclick="shareInstagram(${s.id})" type="button" aria-label="Share to Instagram"><i class="fab fa-instagram"></i> Instagram</button>
+      <a class="share-btn share-btn-wa" href="https://api.whatsapp.com/send?text=${enc(text + " " + url)}" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       <a class="share-btn share-btn-fb" href="https://www.facebook.com/sharer/sharer.php?u=${enc(url)}" target="_blank" rel="noopener" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
       <a class="share-btn share-btn-x" href="https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(text)}" target="_blank" rel="noopener" aria-label="Share on X / Twitter"><i class="fab fa-x-twitter"></i> X</a>
       <a class="share-btn share-btn-pin" href="https://pinterest.com/pin/create/button/?url=${enc(url)}&media=${enc(img)}&description=${enc(text)}" target="_blank" rel="noopener" aria-label="Share photo on Pinterest"><i class="fab fa-pinterest-p"></i> Pinterest</a>
@@ -196,21 +182,6 @@ function shareInstagram(id) {
     } else {
         openIg();
     }
-}
-
-function waShareLink(id) {
-    const s = getSketch(id);
-    if (!s) return;
-    window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(shareMsg(s) + " " + sketchURL(s)), "_blank", "noopener");
-}
-
-function toggleShareMenu(e, btn) {
-    e.stopPropagation();
-    const menu = btn ? btn.parentNode.querySelector('.share-dd-menu') : null;
-    if (!menu) return;
-    const wasOpen = menu.classList.contains('open');
-    document.querySelectorAll('.share-dd-menu.open').forEach((m) => m.classList.remove('open'));
-    if (!wasOpen) menu.classList.add('open');
 }
 
 function copySketchLink(id) {
@@ -691,12 +662,6 @@ document.addEventListener('click', function (e) {
     if (checkout && checkout.classList.contains('open') && e.target && e.target.id === 'checkoutModal') closeCheckout();
     const lb = document.getElementById('lightbox');
     if (lb && lb.classList.contains('open') && e.target && e.target.id === 'lightbox') closeLightbox();
-});
-
-document.addEventListener('click', function (e) {
-    if (!e.target.closest('.share-dd')) {
-        document.querySelectorAll('.share-dd-menu.open').forEach((m) => m.classList.remove('open'));
-    }
 });
 
 document.addEventListener('keydown', function (e) {

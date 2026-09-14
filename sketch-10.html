@@ -59,11 +59,6 @@ main { max-width:900px; margin:30px auto 60px; padding:0 5%; }
 .s-wa { background:#25d366; } .s-fb { background:#1877f2; } .s-x { background:#111; } .s-pin { background:#e60023; }
 .s-img { background:#0ea5e9; } .s-link { background:#10b981; } .s-both { background:#f59e0b; } .s-ig { background:#E4405F; } .s-dl { background:var(--primary); }
 .s-copy { background:var(--bg); border:1px solid var(--border); color:var(--text); }
-.share-dd { position:relative; display:inline-block; }
-.share-dd-menu { display:none; position:absolute; top:calc(100% + 6px); left:0; background:var(--bg2); border:1px solid var(--border); border-radius:10px; padding:6px; min-width:150px; z-index:30; box-shadow:0 10px 30px rgba(0,0,0,.4); }
-.share-dd-menu.open { display:block; }
-.share-dd-menu button { display:flex; align-items:center; gap:8px; width:100%; padding:9px 12px; border:none; background:none; color:var(--text); font-size:0.85rem; font-weight:600; text-align:left; border-radius:7px; cursor:pointer; }
-.share-dd-menu button:hover { background:var(--bg); color:var(--primary); }
 .back { display:inline-block; margin-top:22px; color:var(--muted); text-decoration:none; font-size:0.9rem; }
 .back:hover { color:var(--primary); }
 .footer { text-align:center; padding:22px 5%; border-top:1px solid var(--border); color:var(--muted); font-size:0.82rem; }
@@ -105,22 +100,8 @@ main { max-width:900px; margin:30px auto 60px; padding:0 5%; }
         </div>
         <strong style="display:block;margin-top:12px;">Share to:</strong>
         <div class="row">
-          <div class="share-dd">
-            <button class="sbtn s-ig" type="button" onclick="toggleShareMenu(event, this)">Instagram &#9662;</button>
-            <div class="share-dd-menu">
-              <button type="button" onclick="shareInstagram()">Image</button>
-              <button type="button" onclick="shareLink()">Link</button>
-              <button type="button" onclick="shareBoth()">Both</button>
-            </div>
-          </div>
-          <div class="share-dd">
-            <button class="sbtn s-wa" type="button" onclick="toggleShareMenu(event, this)">WhatsApp &#9662;</button>
-            <div class="share-dd-menu">
-              <button type="button" onclick="shareImage()">Image</button>
-              <button type="button" onclick="waShareLink()">Link</button>
-              <button type="button" onclick="shareBoth()">Both</button>
-            </div>
-          </div>
+          <button class="sbtn s-ig" type="button" onclick="shareInstagram()">Instagram</button>
+          <a class="sbtn s-wa" href="https://api.whatsapp.com/send?text=Check%20out%20this%20beautiful%20Mother%20and%20Daughter%20Sketch%20hand-drawn%20sketch%20by%20A%20F%20Art!%20https%3A%2F%2Favinash29asf.github.io%2FAFArt%2Fsketch-10.html" rel="noopener">WhatsApp</a>
           <a class="sbtn s-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Favinash29asf.github.io%2FAFArt%2Fsketch-10.html" rel="noopener">Facebook</a>
           <a class="sbtn s-x" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Favinash29asf.github.io%2FAFArt%2Fsketch-10.html&text=Check%20out%20this%20beautiful%20Mother%20and%20Daughter%20Sketch%20hand-drawn%20sketch%20by%20A%20F%20Art!%20https%3A%2F%2Favinash29asf.github.io%2FAFArt%2Fsketch-10.html" rel="noopener">X</a>
           <a class="sbtn s-pin" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Favinash29asf.github.io%2FAFArt%2Fsketch-10.html&media=https%3A%2F%2Favinash29asf.github.io%2FAFArt%2Fmother%2520and%2520daughter.jpeg&description=Check%20out%20this%20beautiful%20Mother%20and%20Daughter%20Sketch%20hand-drawn%20sketch%20by%20A%20F%20Art!%20https%3A%2F%2Favinash29asf.github.io%2FAFArt%2Fsketch-10.html" rel="noopener">Pinterest</a>
@@ -160,9 +141,6 @@ function shareImage(){ shareNative([PHOTO_URL], {title:'Mother and Daughter Sket
 function shareLink(){ shareNative([], {title:'Mother and Daughter Sketch | A F Art', text:SHARE_TEXT, url:PAGE_URL}); }
 function shareBoth(){ shareNative([PHOTO_URL], {title:'Mother and Daughter Sketch | A F Art', text:SHARE_TEXT, url:PAGE_URL}); }
 function shareInstagram(){ shareNative([PHOTO_URL], {title:'Mother and Daughter Sketch | A F Art'}, true); }
-function toggleShareMenu(e, btn){ e.stopPropagation(); var menu=btn?btn.parentNode.querySelector('.share-dd-menu'):null; if(!menu) return; var was=menu.classList.contains('open'); document.querySelectorAll('.share-dd-menu.open').forEach(function(m){ m.classList.remove('open'); }); if(!was) menu.classList.add('open'); }
-document.addEventListener('click', function(e){ if(!e.target.closest('.share-dd')){ document.querySelectorAll('.share-dd-menu.open').forEach(function(m){ m.classList.remove('open'); }); } });
-function waShareLink(){ window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(SHARE_TEXT),'_blank','noopener'); }
 </script>
 </body>
 </html>
