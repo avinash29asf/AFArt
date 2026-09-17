@@ -147,5 +147,31 @@ const sketches = [
         type: "Original",
         available: true,
         featured: true
+    },
+    {
+        id: 11,
+        title: "Ma Durga Sketch",
+        description: "A5 size divine hand-drawn pencil sketch of Maa Durga - the goddess of power and protection, captured with serene strength, intricate detailing and fine graphite shading on premium paper. Unframed original, perfect for pooja room, gifting and festive decor.",
+        image: "Ma Durga.jpg",
+        price: 1499,
+        size: "A5",
+        category: "Portrait",
+        date: "2026-09-17",
+        type: "Original",
+        available: true,
+        featured: true
+    },
+    {
+        id: 12,
+        title: "Sir Mokshagundam Visvesvaraya Sketch - Engineers Day Special",
+        description: "A5 size tribute hand-drawn pencil portrait of Sir Mokshagundam Visvesvaraya - India's legendary civil engineer and Bharat Ratna awardee, in whose honour Engineers Day is celebrated on 15th September. Fine graphite shading on premium paper. Unframed original, perfect for engineers, teachers and office decor.",
+        image: "Sir Mokshagundam Visvesvaraya.jpeg",
+        price: 1499,
+        size: "A5",
+        category: "Portrait",
+        date: "2026-09-15",
+        type: "Original",
+        available: true,
+        featured: true
     }
 ];
