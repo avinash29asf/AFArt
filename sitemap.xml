@@ -85,6 +85,12 @@
     <priority>0.70</priority>
   </url>
   <url>
+    <loc>https://avinash29asf.github.io/AFArt/product.html?id=13</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
     <loc>https://avinash29asf.github.io/AFArt/gallery.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>daily</changefreq>
@@ -183,6 +189,12 @@
   <url>
     <loc>https://avinash29asf.github.io/AFArt/sketch-12.html</loc>
     <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://avinash29asf.github.io/AFArt/sketch-13.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.60</priority>
   </url>

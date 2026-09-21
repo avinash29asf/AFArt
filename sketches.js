@@ -173,5 +173,18 @@ const sketches = [
         type: "Original",
         available: true,
         featured: true
+    },
+    {
+        id: 13,
+        title: "Cat Sketch",
+        description: "A5 size adorable hand-drawn pencil sketch of a cute tabby kitten - big expressive eyes, soft fur texture and detailed cross-hatched shading bring this playful pet portrait to life on premium paper. Unframed original, perfect for pet lovers, kids room decor and gifting.",
+        image: "cat.jpeg",
+        price: 1499,
+        size: "A5",
+        category: "Pet",
+        date: "2026-09-21",
+        type: "Original",
+        available: true,
+        featured: true
     }
 ];
